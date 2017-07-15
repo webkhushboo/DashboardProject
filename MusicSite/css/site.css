@@ -1,0 +1,44 @@
+.container{
+ width:100%;
+ padding-left :0px !important;
+ padding-right: 0px !important;
+}
+.body-content{
+  margin-left: 14em;
+  margin-top:0.5em;
+  width:83%;
+  -webkit-transition: margin-left 0.3s linear;
+  -moz-transition: margin-left 0.3s linear;
+  transition: margin-left 0.3s linear;
+}
+header{
+    padding:0.7em;
+    background-color: grey;
+    color:white;
+    font-size: large
+}
+
+header a {
+    background-color: grey;
+    color:white;
+    text-decoration: none;
+}
+
+header a:hover{
+    text-decoration: none;
+}
+.notransition *{
+    -webkit-transition:none !important;
+    -moz-transition :none !important;
+    -o-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+
+
+}
+
+@media all and (max-width:768px){
+    .body-content { 
+        margin-left: 5em;
+    }
+}
