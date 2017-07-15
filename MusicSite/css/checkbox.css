@@ -1,0 +1,13 @@
+.checkbox .btn,
+.checkbox-inline .btn{
+    min-width: 7em;
+    padding-lefT:2em;
+}
+
+.checkbox-inline{
+    margin-left: -1.5em;
+}
+
+.checkbox label, .checkbox-inline label{
+ text-align: left;
+}
