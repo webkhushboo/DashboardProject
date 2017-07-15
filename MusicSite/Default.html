@@ -4,7 +4,8 @@
 <head>
     <title>Music Site</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/sidebar.css" rel="stylesheet" type="text/css" />
+    <link href="css/summary-block.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -12,7 +13,7 @@
         <header>
             <a href="Default.html">My tunes </a>
         </header>
-        <nav class="pdsa-sn-wrapper">
+        <nav class="pdsa-sn-wrapper" id="sideNavParent">
             <ul>
                 <li class="pdsa-sn-brand">
                     <a href="Default.html"><span class="visible-sm visible-md visible-lg">Music</span>
@@ -21,12 +22,28 @@
                     <a href="#"><span class="visible-sm visible-md visible-lg">Home</span>
                       <i class="glyphicon glyphicon-home visible-xs"></i></a></li>
                 <li class="pdsa-sn-brand">
-                    <a href="Default.html"><span class="visible-sm visible-md visible-lg">Genres</span>
-                      <i class="glyphicon glyphicon-globe visible-xs"></i></a></li>
+                    <a href="#" data-toggle="collapse" data-target="#ulGenres"><span class="visible-sm visible-md visible-lg">Genres &nbsp; <b class="caret"></b></span>
+                      <i class="glyphicon glyphicon-globe visible-xs"></i></a>
+                    <div class="visible-sm visible-md visible-lg">
+                        <ul id="ulGenres" class="collapse" data-parent="#sideNavParent">
+                            <li><a href="#">All Genres</a> </li>
+                            <li><a href="#">Jazz</a> </li>
+                            <li><a href="#">Country</a> </li>
+                            <li><a href="#">Rock  </a> </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="pdsa-sn-brand">
-                    <a href="Default.html"><span class="visible-sm visible-md visible-lg">Playlists</span>
-                      <i class="glyphicon glyphicon-list-alt visible-xs"></i></a></li>
+                    <a href="#" data-toggle="collapse" data-target="#ulPlaylists"><span class="visible-sm visible-md visible-lg">Playlists &nbsp; <b class="caret"></b></span>
+                      <i class="glyphicon glyphicon-list-alt visible-xs"></i></a>
+                    <div class="visible-sm visible-md visible-lg">
+                        <ul id="ulPlaylists" class="collapse" data-parent="#sideNavParent">
+                            <li><a href="#">All playlists</a> </li>
+                            <li><a href="#">My Top Related</a> </li>
+                            <li><a href="#">Top Country</a> </li>
+                            <li><a href="#">Top Classic Rock  </a> </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="pdsa-sn-brand">
                     <a href="Default.html"><span class="visible-sm visible-md visible-lg">Songs</span>
@@ -39,10 +56,65 @@
     </div>
     <div class="container body-content">
         <div class="row">
-            <div class="col-xs-10 col-lg-12">
-                <h1> My Music </h1>
-                <p> This is where you gather all of your music </p>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="pdsa-summary-block pdsa-summary-block-primary">
+                    <div class="summary-background">
+                        <i class="glyphicon glyphicon-globe"></i>
+                    </div>
+                    <div class="summary-body">
+                        <div class="summary-line-1">14</div>
+                        <div class="summary-line-2">Genres</div>
+                    </div>
+                    <div class="summary-footer">
+                        <a href="Genres.html"> View Genres <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                       </div>
+                   </div> 
             </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="pdsa-summary-block pdsa-summary-block-success">
+                    <div class="summary-background">
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                    </div>
+                    <div class="summary-body">
+                        <div class="summary-line-1">5</div>
+                        <div class="summary-line-2">Playlists</div>
+                    </div>
+                    <div class="summary-footer">
+                        <a href="playlists.html"> All Playlists.. <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                       </div>
+                   </div> 
+            </div>
+        </div>
+            <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="pdsa-summary-block pdsa-summary-block-info">
+                    <div class="summary-background">
+                        <i class="glyphicon glyphicon-music"></i>
+                    </div>
+                    <div class="summary-body">
+                        <div class="summary-line-1">2413</div>
+                        <div class="summary-line-2">Songs</div>
+                    </div>
+                    <div class="summary-footer">
+                        <a href="songs.html"> See Songs.. <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                       </div>
+                   </div> 
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="pdsa-summary-block pdsa-summary-block-danger">
+                    <div class="summary-background">
+                        <i class="glyphicon glyphicon-download"></i>
+                    </div>
+                    <div class="summary-body">
+                        <div class="summary-line-1">1</div>
+                        <div class="summary-line-2">Download</div>
+                    </div>
+                    <div class="summary-footer">
+                        <a href="Genres.html"> Get Downloads.. <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                       </div>
+                   </div> 
+            </div>
+        </div>     
         </div>
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
