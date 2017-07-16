@@ -62,21 +62,26 @@
            <div class="text-center col-xs-12">
                <h3> Display the following genres.. </h3>
                <div class="well well-sm">
-               <div class="checkbox-inline">
+                   <div class="btn-group" data-toggle="buttons">
+               <!--<div class="checkbox-inline"> -->
                    <label class="btn btn-default">
-                       <input type="checkbox"/>Jazz
+                       <span class="glyphicon glyphicon-unchecked"></span>
+                       <input type="checkbox" checked="checked"/>Jazz
                    </label>
-               </div>
-               <div class="checkbox-inline">
+               <!--</div> -->
+                <!--<div class="checkbox-inline"> -->
                    <label class="btn btn-default">
+                       <span class="glyphicon glyphicon-unchecked"></span>
                        <input type="checkbox"/>Country
                    </label>
-               </div>
-               <div class="checkbox-inline">
+               <!--</div> -->
+                <!--<div class="checkbox-inline"> -->
                    <label class="btn btn-default">
+                       <span class="glyphicon glyphicon-unchecked"></span>
                        <input type="checkbox"/>Rock
                    </label>
-               </div>
+              <!--</div> -->
+                   </div>
            </div>
        </div>
        </div> 
@@ -132,6 +137,27 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/common.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("[type ='checkbox']").on('change',function(){
+            if($(this).prop('checked')){
+                $(this).prev().removeClass('glyphicon-unchecked')
+                .addClass('glyphicon-ok-circle');
+            }
+            else {
+                $(this).prev().removeClass('glyphicon-ok-circle')
+                .addClass('glyphicon-unchecked');
+            }
+            });
+
+            $("input:checked").prev()
+            .removeClass('glyphicon-unchecked')
+            .addClass('glyphicon-ok-circle');
+
+             $("input:checked").parent()
+            .addClass('active');
+        });
+        </script>
 </body>
 
 </html>
