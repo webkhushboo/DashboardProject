@@ -8,6 +8,7 @@
     <link href="css/summary-block.css" rel="stylesheet" type="text/css" />
     <link href="css/readme.css" rel="stylesheet" type="text/css" />
     <link href="css/site.css" rel="stylesheet" type="text/css" />
+    <link href="css/songs.css" rel="stylesheet" type="text/css" />
         <link href="css/checkbox.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -82,6 +83,26 @@
                    </div>
            </div>
        </div>
+       <div class="row">
+           <div class="col-xs-12 col-sm-4">
+               <div class="panel panel-warning">
+                   <div class="panel-body">
+                       <span class="title">Southern Style </span>
+                       <span class="desc">Darius Rucker</span>
+                       <span class="price">$10.00</span>
+                   </div>
+                   <div class="panel-footer">
+                       <div class="btn-group" data-toggle="buttons">
+                           <label class="btn btn-success active">
+                               <span class="glyphicon glyphicon-ok-circle"></span>
+                               <input type="checkbox" id="chk1" name="products" checked="checked">
+                               <label for="chk1">Selected </label>
+                           </label>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
        </div> 
          </div>
         <script src="js/jquery-3.2.1.min.js"></script>
@@ -92,7 +113,29 @@
             $("#songSelect .btn").on('click',function(){
               ToggleRadioButton("#songSelect",$(this));
             });
+ $("[type ='checkbox']").on('change',function(){
+            if($(this).prop('checked')){
+                $(this).prev().removeClass('glyphicon-unchecked')
+                .addClass('glyphicon-ok-circle');
+                $(this).parent().removeClass('btn-primary')
+                .addClass('btn-success');
+                $(this).next().text("Selected");
+            }
+            else {
+                $(this).prev().removeClass('glyphicon-ok-circle')
+                .addClass('glyphicon-unchecked');
+                  $(this).parent().removeClass('btn-success')
+                .addClass('btn-primary');
+                $(this).next().text("Not Selected");
+            }
+            });
 
+            $("input:checked").prev()
+            .removeClass('glyphicon-unchecked')
+            .addClass('glyphicon-ok-circle');
+
+             $("input:checked").parent()
+            .addClass('active');
            
         });
 
