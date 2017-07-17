@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Genres</title>
+    <title>Songs</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/sidebar.css" rel="stylesheet" type="text/css" />
     <link href="css/summary-block.css" rel="stylesheet" type="text/css" />
@@ -29,7 +29,7 @@
                       <i class="glyphicon glyphicon-globe visible-xs"></i></a>
                     <div class="visible-sm visible-md visible-lg">
                         <ul id="ulGenres" class="collapse" data-parent="#sideNavParent">
-                            <li><a href="#">All Genres</a> </li>
+                            <li><a href="Genres.html">All Genres</a> </li>
                             <li><a href="#">Jazz</a> </li>
                             <li><a href="#">Country</a> </li>
                             <li><a href="#">Rock  </a> </li>
@@ -60,103 +60,49 @@
     <div class="container body-content">
        <div class="row">
            <div class="text-center col-xs-12">
-               <h3> Display the following genres.. </h3>
+               <h3> Display the following ..</h3>
                <div class="well well-sm">
-                   <div class="btn-group" data-toggle="buttons">
-               <!--<div class="checkbox-inline"> -->
+                   <div class="btn-group" data-toggle="buttons" id="songSelect">
+              
                    <label class="btn btn-default">
                        <span class="glyphicon glyphicon-unchecked"></span>
-                       <input type="checkbox" checked="checked"/>Jazz
+                       <input type="checkbox"/>All songs
                    </label>
-               <!--</div> -->
-                <!--<div class="checkbox-inline"> -->
+               
                    <label class="btn btn-default">
                        <span class="glyphicon glyphicon-unchecked"></span>
-                       <input type="checkbox"/>Country
+                       <input type="checkbox"/>Selected
                    </label>
-               <!--</div> -->
-                <!--<div class="checkbox-inline"> -->
+              
                    <label class="btn btn-default">
                        <span class="glyphicon glyphicon-unchecked"></span>
-                       <input type="checkbox"/>Rock
+                       <input type="checkbox"/>Unselected
                    </label>
-              <!--</div> -->
+             
                    </div>
            </div>
        </div>
        </div> 
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                 <div class="pdsa-readme-box pdsa-readme-box-primary">
-                <div class="readme-header">
-                    <i class="glyphicon glyphicon-music"></i>
-                </div>
-                <div class="readme-body">
-                    <h1>Jazz</h1>
-                    <p> Jazz is genre music that origniated in the late nineteenth and early twentieth centrury!!</p>
-                </div>
-                <div class="readme-footer">
-                    <a href="Jazz.html"> + See all Jazz Songs... </a>
-                </div>
-            </div>
-            </div>
-                
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                 <div class="pdsa-readme-box pdsa-readme-box-success">
-                <div class="readme-header">
-                    <i class="glyphicon glyphicon-music"></i>
-                </div>
-                <div class="readme-body">
-                    <h1>Country</h1>
-                    <p>Country music is an American popular music that origniated in the late nineteenth and early twentieth centrury !!</p>
-                </div>
-                <div class="readme-footer">
-                    <a href="Country.html"> + See All Country Songs... </a>
-                </div>
-            </div>
-            </div>
-        </div>
-            <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="pdsa-readme-box pdsa-readme-box-info">
-                <div class="readme-header">
-                    <i class="glyphicon glyphicon-music"></i>
-                </div>
-                <div class="readme-body">
-                    <h1>Rock</h1>
-                    <p>Rock music is genre of popular music that is sometimes called Rock  !!</p>
-                </div>
-                <div class="readme-footer">
-                    <a href="Rock.html"> + See all Rock Songs... </a>
-                </div>
-            </div> 
-            </div>
-           
-        </div> 
          </div>
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/common.js"></script>
         <script>
         $(document).ready(function(){
-            $("[type ='checkbox']").on('change',function(){
-            if($(this).prop('checked')){
-                $(this).prev().removeClass('glyphicon-unchecked')
-                .addClass('glyphicon-ok-circle');
-            }
-            else {
-                $(this).prev().removeClass('glyphicon-ok-circle')
-                .addClass('glyphicon-unchecked');
-            }
+            $("#songSelect .btn").on('click',function(){
+              ToggleRadioButton("#songSelect",$(this));
             });
 
-            $("input:checked").prev()
-            .removeClass('glyphicon-unchecked')
-            .addClass('glyphicon-ok-circle');
-
-             $("input:checked").parent()
-            .addClass('active');
+           
         });
+
+        function ToggleRadioButton(groupName,current){
+            $(groupName+" .glyphicon-record").removeClass("glyphicon-record")
+            .addClass("glyphicon-unchecked");
+            current.find(":first-child")
+            .removeClass("glyphicon-unchecked")
+            .addClass("glyphicon-record");
+        }
         </script>
 </body>
 
