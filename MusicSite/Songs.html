@@ -110,35 +110,51 @@
         <script src="js/common.js"></script>
         <script>
         $(document).ready(function(){
+
+         checkedOptions ={
+                  "checkedGlyph" : "glyphicon-ok-circle",
+                  "uncheckedGlyph" : "glyphicon-unchecked",
+                  "checkedBtn" :"btn-success",
+                  "uncheckedBtn" :"btn-primary",
+                  "checkedText" :"Selected",
+                  "uncheckedText" :"Not Selected"
+             };
+
             $("#songSelect .btn").on('click',function(){
               ToggleRadioButton("#songSelect",$(this));
             });
- $("[type ='checkbox']").on('change',function(){
+            
+            $("[type ='checkbox']").on('change',function(){
             if($(this).prop('checked')){
-                $(this).prev().removeClass('glyphicon-unchecked')
-                .addClass('glyphicon-ok-circle');
-                $(this).parent().removeClass('btn-primary')
-                .addClass('btn-success');
-                $(this).next().text("Selected");
+               setChecked($(this));
             }
             else {
-                $(this).prev().removeClass('glyphicon-ok-circle')
-                .addClass('glyphicon-unchecked');
-                  $(this).parent().removeClass('btn-success')
-                .addClass('btn-primary');
-                $(this).next().text("Not Selected");
+                setUnchecked($(this));
             }
             });
 
             $("input:checked").prev()
-            .removeClass('glyphicon-unchecked')
-            .addClass('glyphicon-ok-circle');
+            .removeClass(checkedOptions.uncheckedGlyph)
+            .addClass(checkedOptions.checkedGlyph);
 
              $("input:checked").parent()
             .addClass('active');
            
         });
-
+        function setChecked(elem){
+                $(elem).prev().removeClass(checkedOptions.uncheckedGlyph)
+                .addClass(checkedOptions.checkedGlyph);
+                $(elem).parent().removeClass(checkedOptions.uncheckedBtn)
+                .addClass(checkedOptions.checkedBtn);
+                $(elem).next().text(checkedOptions.checkedText);
+        }
+        function setUnchecked(elem){
+                $(elem).prev().removeClass(checkedOptions.checkedGlyph)
+                .addClass(checkedOptions.uncheckedGlyph);
+                $(elem).parent().removeClass(checkedOptions.checkedBtn)
+                .addClass(checkedOptions.uncheckedBtn);
+                $(elem).next().text(checkedOptions.uncheckedText);
+        }
         function ToggleRadioButton(groupName,current){
             $(groupName+" .glyphicon-record").removeClass("glyphicon-record")
             .addClass("glyphicon-unchecked");
