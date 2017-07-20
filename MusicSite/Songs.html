@@ -91,7 +91,7 @@
                        <span class="desc">Darius Rucker</span>
                        <span class="price">$10.00</span>
                    </div>
-                   <div class="panel-footer">
+                   <div class="panel-footer text-center">
                        <div class="btn-group" data-toggle="buttons">
                            <label class="btn btn-success active">
                                <span class="glyphicon glyphicon-ok-circle"></span>
@@ -102,6 +102,99 @@
                    </div>
                </div>
            </div>
+             <div class="col-xs-12 col-sm-4">
+               <div class="panel panel-warning">
+                   <div class="panel-body">
+                       <span class="title">Based on a True Story </span>
+                       <span class="desc">Blake Shelton</span>
+                       <span class="price">$13.00</span>
+                   </div>
+                   <div class="panel-footer text-center">
+                       <div class="btn-group" data-toggle="buttons">
+                           <label class="btn btn-primary">
+                               <span class="glyphicon glyphicon-unchecked"></span>
+                               <input type="checkbox" id="chk2" name="products">
+                               <label for="chk2">Not Selected </label>
+                           </label>
+                       </div>
+                   </div>
+               </div>
+           </div>
+            <div class="col-xs-12 col-sm-4">
+               <div class="panel panel-warning">
+                   <div class="panel-body">
+                       <span class="title">Tom Cat</span>
+                       <span class="desc">Tom Scott &amp; the L.A Express</span>
+                       <span class="price">$7.00</span>
+                   </div>
+                   <div class="panel-footer text-center">
+                       <div class="btn-group" data-toggle="buttons">
+                           <label class="btn btn-primary">
+                               <span class="glyphicon glyphicon-unchecked"></span>
+                               <input type="checkbox" id="chk2" name="products">
+                               <label for="chk2">Not Selected </label>
+                           </label>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="row">
+             <div class="col-xs-12 col-sm-4">
+               <div class="panel panel-warning">
+                   <div class="panel-body">
+                       <span class="title">The Best of Richard Elliot</span>
+                       <span class="desc">Richard Elliot</span>
+                       <span class="price">$12.00</span>
+                   </div>
+                   <div class="panel-footer text-center">
+                       <div class="btn-group" data-toggle="buttons">
+                           <label class="btn btn-primary">
+                               <span class="glyphicon glyphicon-unchecked"></span>
+                               <input type="checkbox" id="chk2" name="products">
+                               <label for="chk2">Not Selected </label>
+                           </label>
+                       </div>
+                   </div>
+               </div>
+           </div>
+             <div class="col-xs-12 col-sm-4">
+               <div class="panel panel-warning">
+                   <div class="panel-body">
+                       <span class="title">Drunk Enough to Dance</span>
+                       <span class="desc">Bowling for Soup</span>
+                       <span class="price">$9.00</span>
+                   </div>
+                   <div class="panel-footer text-center">
+                       <div class="btn-group" data-toggle="buttons">
+                           <label class="btn btn-primary">
+                               <span class="glyphicon glyphicon-unchecked"></span>
+                               <input type="checkbox" id="chk2" name="products">
+                               <label for="chk2">Not Selected </label>
+                           </label>
+                       </div>
+                   </div>
+               </div>
+           </div>
+             <div class="col-xs-12 col-sm-4">
+               <div class="panel panel-warning">
+                   <div class="panel-body">
+                       <span class="title">Back in Black</span>
+                       <span class="desc">Tom Scott &amp; the L.A Express</span>
+                       <span class="price">$7.00</span>
+                   </div>
+                   <div class="panel-footer text-center">
+                       <div class="btn-group" data-toggle="buttons">
+                           <label class="btn btn-primary">
+                               <span class="glyphicon glyphicon-unchecked"></span>
+                               <input type="checkbox" id="chk2" name="products">
+                               <label for="chk2">Not Selected </label>
+                           </label>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
        </div>
        </div> 
          </div>
@@ -132,6 +225,9 @@
                 setUnchecked($(this));
             }
             });
+
+            var checked = $(checkedOptions.id +" .btn-group input:checked");
+            setChecked(checked);
 
             $("input:checked").prev()
             .removeClass(checkedOptions.uncheckedGlyph)
